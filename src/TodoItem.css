@@ -1,0 +1,9 @@
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 6px, 3px;
+    margin-bottom: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
