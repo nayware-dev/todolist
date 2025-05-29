@@ -1,11 +1,11 @@
-import React from 'react'
-import TextBox from './TodoForm'
-import List from './TodoList'
+import React, { useState } from 'react'
+import TodoForm from './TodoForm'
+import TodoList from './TodoList'
 import './App.css'
 
 
 function App() {
-  const [todos, setTodos] = useState([]); // an empty array ready for todo items to be added to rather than null. array is better and more useful, null can bring up errors
+  const [todos, setTodos] = useState(['Wash dishes']); // an empty array ready for todo items to be added to rather than null. array is better and more useful, null can bring up errors
   
   const addTodo = (text) => {
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
@@ -26,11 +26,11 @@ function App() {
   }
   // takes the to do item which matches the id, checks whether true or false and switches it over. items that dont match the id are returned unchanged
 return (
+  
 <div className='app'>
   <h1>My To Do List</h1>
-  <TextBox/>
-  <List/>
-
+  <TodoForm onAdd={addTodo} />
+  <TodoList todos={todos} onDelete={deleteTodo} onToggle={toggleTodo} />
   </div>
 );
 }

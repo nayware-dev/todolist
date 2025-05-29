@@ -3,9 +3,10 @@ import TodoItem from './TodoItem'
 import './TodoList.css'
 
 function TodoList({ todos, onDelete, onToggle }) {
+  console.log(todos)
 return (
   <div className="todo-list">
-{todos.length === 0 ? (
+{todos&&todos.length === 0 ? (
   <p className='empty-message'> No tasks outstanding</p>
 ) : (
     todos.map(todo => (

@@ -19,7 +19,7 @@ function TodoForm({ onAdd }) {
       <input
       type="text"
       value={text}
-      onChange={(e) => setText(e.target.value)} // this updated the text state as user is typing
+      onChange={(e) => setText(e.target.value)} // this updates the text state as user is typing
       placeholder='Add your to-do task here!'
       />
       <button type='submit'></button> 
